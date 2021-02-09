@@ -11,7 +11,7 @@ pipeline {
         description: 'Seleccione la tecnologia que se desea testear' )  
     }
   environment {
-    def RUN_ID = sh(script: "echo `date +%Y%m%d%H%M%S`")
+    def RUN_ID = sh(script: "echo `date +%Y%m%d%H%M%S`", returnStdout: true).trim()
   }
   stages {
       stage('Comando a ejecutar') {
