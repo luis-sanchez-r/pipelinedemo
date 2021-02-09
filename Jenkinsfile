@@ -1,7 +1,5 @@
 pipeline {
-  agent {
-      none
-    }
+  agent none
   parameters {
       choice(
         name: 'Comando',
