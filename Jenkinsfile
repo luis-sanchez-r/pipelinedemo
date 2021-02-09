@@ -14,3 +14,12 @@ pipeline {
         choices: ['folder01', 'folder02'],
         description: 'Seleccione la tecnologia que se desea testear' )  
   }
+
+  stages {
+      stage('Comando a ejecutar') {
+          steps {
+              echo " El comando a ejecutar es ${params.Comando} en el folder ${params.Tecnologia}"
+              ${params.Comando} ${params.Tecnologia}/file01.prf
+          }
+      }
+  }
