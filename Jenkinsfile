@@ -18,7 +18,7 @@ pipeline {
             sh 'cd pipelinedemo'
             sh "echo \"El comando a ejecutar es ${params.Comando} en el folder ${params.Tecnologia}\" "
             sh "${params.Comando} ${params.Tecnologia}/file01.prf"
-            sh "echo RUN_ID =`date \'+%Y%m%d%H%M%S\'`"
+            RUN_ID = $(echo `date +%Y%m%d%H%M%S`)
             sh "echo el run_id es: ${RUN_ID}"
           }
       }
