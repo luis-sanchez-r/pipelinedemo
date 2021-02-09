@@ -16,7 +16,7 @@ pipeline {
             sh 'rm -fr pipelinedemo'
             sh 'git clone https://github.com/luis-sanchez-r/pipelinedemo.git'
             sh 'cd pipelinedemo'
-            sh 'echo "El comando a ejecutar es ${params.Comando} en el folder ${params.Tecnologia}" '
+            sh "echo \"El comando a ejecutar es ${params.Comando} en el folder ${params.Tecnologia}\" "
             sh '${params.Comando} ${params.Tecnologia}/file01.prf'
           }
       }
