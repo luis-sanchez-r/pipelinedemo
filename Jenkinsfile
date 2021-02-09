@@ -18,6 +18,8 @@ pipeline {
   stages {
       stage('Comando a ejecutar') {
           steps {
+              git clone https://github.com/luis-sanchez-r/pipelinedemo.git
+              cd pipelinedemo
               echo " El comando a ejecutar es ${params.Comando} en el folder ${params.Tecnologia}"
               ${params.Comando} ${params.Tecnologia}/file01.prf
           }
